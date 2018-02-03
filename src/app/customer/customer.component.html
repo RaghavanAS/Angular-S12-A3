@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Customers</h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6">
+    <app-customer-component> </app-customer-component>
+  </div>
+  <div class="col-xs-12 col-sm-6">
+    <h2> Customer Details </h2>
+    <div class="panel panel-primary">
+      <input type="text" name="searchData" class="form-control" placeholder="Search" [(ngModel)]="searchData">
+    </div>
+    <app-customer-detail [customer]="c" *ngFor="let c of ( customers | searchBy : searchData );"></app-customer-detail>
+</div>
+</div>
